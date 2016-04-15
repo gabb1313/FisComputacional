@@ -1,0 +1,271 @@
+\documentclass{article}
+
+%% Created with wxMaxima 13.04.2
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i1) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+load(vect);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o1) }
+/usr/share/maxima/5.34.1/share/vector/vect.mac
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i2) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+f(x,y):=x^2/4+y^2/9;
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o2) }
+\mathrm{f}\left( x,y\right) :=\frac{{x}^{2}}{4}+\frac{{y}^{2}}{9}
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i3) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+scalefactors([x,y]);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o3) }
+done
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i4) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+gdf(x,y):=grad(f(x,y));
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o4) }
+\mathrm{gdf}\left( x,y\right) :=\mathrm{grad}\left( \mathrm{f}\left( x,y\right) \right) 
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i5) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+ev(express(gdf(x,y)),diff);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o5) }
+[\frac{x}{2},\frac{2\,y}{9}]
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i6) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+define(gdf(x,y),%);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o6) }
+\mathrm{gdf}\left( x,y\right) :=[\frac{x}{2},\frac{2\,y}{9}]
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i7) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+coord: setify(makelist(k,k,-5,5));
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o7) }
+{−5,−4,−3,−2,−1,0,1,2,3,4,5}
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i8) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+points2d: listify(cartesian_product(coord,coord));
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o8) }
+[[−5,−5],[−5,−4],[−5,−3],[−5,−2],[−5,−1],[−5,0],[−5,1],[−5,2],[−5,3],[−5,4],[−5,5],[−4,−5],[−4,−4],[−4,−3],[−4,−2],[−4,−1],[−4,0],[−4,1],[−4,2],[−4,3],[−4,4],[−4,5],[−3,−5],[−3,−4],[−3,−3],[−3,−2],[−3,−1],[−3,0],[−3,1],[−3,2],[−3,3],[−3,4],[−3,5],[−2,−5],[−2,−4],[−2,−3],[−2,−2],[−2,−1],[−2,0],[−2,1],[−2,2],[−2,3],[−2,4],[−2,5],[−1,−5],[−1,−4],[−1,−3],[−1,−2],[−1,−1],[−1,0],[−1,1],[−1,2],[−1,3],[−1,4],[−1,5],[0,−5],[0,−4],[0,−3],[0,−2],[0,−1],[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[1,−5],[1,−4],[1,−3],[1,−2],[1,−1],[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[2,−5],[2,−4],[2,−3],[2,−2],[2,−1],[2,0],[2,1],[2,2],[2,3],[2,4],[2,5],[3,−5],[3,−4],[3,−3],[3,−2],[3,−1],[3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[4,−5],[4,−4],[4,−3],[4,−2],[4,−1],[4,0],[4,1],[4,2],[4,3],[4,4],[4,5],[5,−5],[5,−4],[5,−3],[5,−2],[5,−1],[5,0],[5,1],[5,2],[5,3],[5,4],[5,5]]
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i9) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+vf2d(x,y):=vector([x,y],gdf(x,y)/5);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o9) }
+\mathrm{vf2d}\left( x,y\right) :=\mathrm{vector}\left( [x,y],\frac{\mathrm{gdf}\left( x,y\right) }{5}\right) 
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i10) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+vect2: makelist(vf2d(k[1],k[2]),k,points2d);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o10) }
+[\mathrm{vector}\left( [−5,−5],[−\frac{1}{2},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [−5,−4],[−\frac{1}{2},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [−5,−3],[−\frac{1}{2},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [−5,−2],[−\frac{1}{2},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [−5,−1],[−\frac{1}{2},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [−5,0],[−\frac{1}{2},0]\right) ,\mathrm{vector}\left( [−5,1],[−\frac{1}{2},\frac{2}{45}]\right) ,\mathrm{vector}\left( [−5,2],[−\frac{1}{2},\frac{4}{45}]\right) ,\mathrm{vector}\left( [−5,3],[−\frac{1}{2},\frac{2}{15}]\right) ,\mathrm{vector}\left( [−5,4],[−\frac{1}{2},\frac{8}{45}]\right) ,\mathrm{vector}\left( [−5,5],[−\frac{1}{2},\frac{2}{9}]\right) ,\mathrm{vector}\left( [−4,−5],[−\frac{2}{5},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [−4,−4],[−\frac{2}{5},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [−4,−3],[−\frac{2}{5},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [−4,−2],[−\frac{2}{5},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [−4,−1],[−\frac{2}{5},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [−4,0],[−\frac{2}{5},0]\right) ,\mathrm{vector}\left( [−4,1],[−\frac{2}{5},\frac{2}{45}]\right) ,\mathrm{vector}\left( [−4,2],[−\frac{2}{5},\frac{4}{45}]\right) ,\mathrm{vector}\left( [−4,3],[−\frac{2}{5},\frac{2}{15}]\right) ,\mathrm{vector}\left( [−4,4],[−\frac{2}{5},\frac{8}{45}]\right) ,\mathrm{vector}\left( [−4,5],[−\frac{2}{5},\frac{2}{9}]\right) ,\mathrm{vector}\left( [−3,−5],[−\frac{3}{10},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [−3,−4],[−\frac{3}{10},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [−3,−3],[−\frac{3}{10},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [−3,−2],[−\frac{3}{10},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [−3,−1],[−\frac{3}{10},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [−3,0],[−\frac{3}{10},0]\right) ,\mathrm{vector}\left( [−3,1],[−\frac{3}{10},\frac{2}{45}]\right) ,\mathrm{vector}\left( [−3,2],[−\frac{3}{10},\frac{4}{45}]\right) ,\mathrm{vector}\left( [−3,3],[−\frac{3}{10},\frac{2}{15}]\right) ,\mathrm{vector}\left( [−3,4],[−\frac{3}{10},\frac{8}{45}]\right) ,\mathrm{vector}\left( [−3,5],[−\frac{3}{10},\frac{2}{9}]\right) ,\mathrm{vector}\left( [−2,−5],[−\frac{1}{5},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [−2,−4],[−\frac{1}{5},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [−2,−3],[−\frac{1}{5},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [−2,−2],[−\frac{1}{5},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [−2,−1],[−\frac{1}{5},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [−2,0],[−\frac{1}{5},0]\right) ,\mathrm{vector}\left( [−2,1],[−\frac{1}{5},\frac{2}{45}]\right) ,\mathrm{vector}\left( [−2,2],[−\frac{1}{5},\frac{4}{45}]\right) ,\mathrm{vector}\left( [−2,3],[−\frac{1}{5},\frac{2}{15}]\right) ,\mathrm{vector}\left( [−2,4],[−\frac{1}{5},\frac{8}{45}]\right) ,\mathrm{vector}\left( [−2,5],[−\frac{1}{5},\frac{2}{9}]\right) ,\mathrm{vector}\left( [−1,−5],[−\frac{1}{10},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [−1,−4],[−\frac{1}{10},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [−1,−3],[−\frac{1}{10},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [−1,−2],[−\frac{1}{10},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [−1,−1],[−\frac{1}{10},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [−1,0],[−\frac{1}{10},0]\right) ,\mathrm{vector}\left( [−1,1],[−\frac{1}{10},\frac{2}{45}]\right) ,\mathrm{vector}\left( [−1,2],[−\frac{1}{10},\frac{4}{45}]\right) ,\mathrm{vector}\left( [−1,3],[−\frac{1}{10},\frac{2}{15}]\right) ,\mathrm{vector}\left( [−1,4],[−\frac{1}{10},\frac{8}{45}]\right) ,\mathrm{vector}\left( [−1,5],[−\frac{1}{10},\frac{2}{9}]\right) ,\mathrm{vector}\left( [0,−5],[0,−\frac{2}{9}]\right) ,\mathrm{vector}\left( [0,−4],[0,−\frac{8}{45}]\right) ,\mathrm{vector}\left( [0,−3],[0,−\frac{2}{15}]\right) ,\mathrm{vector}\left( [0,−2],[0,−\frac{4}{45}]\right) ,\mathrm{vector}\left( [0,−1],[0,−\frac{2}{45}]\right) ,\mathrm{vector}\left( [0,0],[0,0]\right) ,\mathrm{vector}\left( [0,1],[0,\frac{2}{45}]\right) ,\mathrm{vector}\left( [0,2],[0,\frac{4}{45}]\right) ,\mathrm{vector}\left( [0,3],[0,\frac{2}{15}]\right) ,\mathrm{vector}\left( [0,4],[0,\frac{8}{45}]\right) ,\mathrm{vector}\left( [0,5],[0,\frac{2}{9}]\right) ,\mathrm{vector}\left( [1,−5],[\frac{1}{10},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [1,−4],[\frac{1}{10},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [1,−3],[\frac{1}{10},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [1,−2],[\frac{1}{10},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [1,−1],[\frac{1}{10},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [1,0],[\frac{1}{10},0]\right) ,\mathrm{vector}\left( [1,1],[\frac{1}{10},\frac{2}{45}]\right) ,\mathrm{vector}\left( [1,2],[\frac{1}{10},\frac{4}{45}]\right) ,\mathrm{vector}\left( [1,3],[\frac{1}{10},\frac{2}{15}]\right) ,\mathrm{vector}\left( [1,4],[\frac{1}{10},\frac{8}{45}]\right) ,\mathrm{vector}\left( [1,5],[\frac{1}{10},\frac{2}{9}]\right) ,\mathrm{vector}\left( [2,−5],[\frac{1}{5},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [2,−4],[\frac{1}{5},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [2,−3],[\frac{1}{5},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [2,−2],[\frac{1}{5},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [2,−1],[\frac{1}{5},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [2,0],[\frac{1}{5},0]\right) ,\mathrm{vector}\left( [2,1],[\frac{1}{5},\frac{2}{45}]\right) ,\mathrm{vector}\left( [2,2],[\frac{1}{5},\frac{4}{45}]\right) ,\mathrm{vector}\left( [2,3],[\frac{1}{5},\frac{2}{15}]\right) ,\mathrm{vector}\left( [2,4],[\frac{1}{5},\frac{8}{45}]\right) ,\mathrm{vector}\left( [2,5],[\frac{1}{5},\frac{2}{9}]\right) ,\mathrm{vector}\left( [3,−5],[\frac{3}{10},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [3,−4],[\frac{3}{10},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [3,−3],[\frac{3}{10},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [3,−2],[\frac{3}{10},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [3,−1],[\frac{3}{10},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [3,0],[\frac{3}{10},0]\right) ,\mathrm{vector}\left( [3,1],[\frac{3}{10},\frac{2}{45}]\right) ,\mathrm{vector}\left( [3,2],[\frac{3}{10},\frac{4}{45}]\right) ,\mathrm{vector}\left( [3,3],[\frac{3}{10},\frac{2}{15}]\right) ,\mathrm{vector}\left( [3,4],[\frac{3}{10},\frac{8}{45}]\right) ,\mathrm{vector}\left( [3,5],[\frac{3}{10},\frac{2}{9}]\right) ,\mathrm{vector}\left( [4,−5],[\frac{2}{5},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [4,−4],[\frac{2}{5},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [4,−3],[\frac{2}{5},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [4,−2],[\frac{2}{5},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [4,−1],[\frac{2}{5},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [4,0],[\frac{2}{5},0]\right) ,\mathrm{vector}\left( [4,1],[\frac{2}{5},\frac{2}{45}]\right) ,\mathrm{vector}\left( [4,2],[\frac{2}{5},\frac{4}{45}]\right) ,\mathrm{vector}\left( [4,3],[\frac{2}{5},\frac{2}{15}]\right) ,\mathrm{vector}\left( [4,4],[\frac{2}{5},\frac{8}{45}]\right) ,\mathrm{vector}\left( [4,5],[\frac{2}{5},\frac{2}{9}]\right) ,\mathrm{vector}\left( [5,−5],[\frac{1}{2},−\frac{2}{9}]\right) ,\mathrm{vector}\left( [5,−4],[\frac{1}{2},−\frac{8}{45}]\right) ,\mathrm{vector}\left( [5,−3],[\frac{1}{2},−\frac{2}{15}]\right) ,\mathrm{vector}\left( [5,−2],[\frac{1}{2},−\frac{4}{45}]\right) ,\mathrm{vector}\left( [5,−1],[\frac{1}{2},−\frac{2}{45}]\right) ,\mathrm{vector}\left( [5,0],[\frac{1}{2},0]\right) ,\mathrm{vector}\left( [5,1],[\frac{1}{2},\frac{2}{45}]\right) ,\mathrm{vector}\left( [5,2],[\frac{1}{2},\frac{4}{45}]\right) ,\mathrm{vector}\left( [5,3],[\frac{1}{2},\frac{2}{15}]\right) ,\mathrm{vector}\left( [5,4],[\frac{1}{2},\frac{8}{45}]\right) ,\mathrm{vector}\left( [5,5],[\frac{1}{2},\frac{2}{9}]\right) ]
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i11) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+load(draw);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+Loading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/grcommon.oFinished loading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/grcommon.oLoading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/gnuplot.oFinished loading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/gnuplot.oLoading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/vtk.oFinished loading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/vtk.oLoading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/picture.oFinished loading /home/agcarretas/.maxima/binary/binary-gcl/share/draw/picture.o
+\end{math}
+
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o11) }
+/usr/share/maxima/5.34.1/share/draw/draw.lisp
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i12) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+apply(draw2d,append([head_length=0.1,color=red],vect2));
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o12) }
+[\mathrm{gr2d}(vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector,vector)]
+\end{math}
+%%%%%%%%%%%%%%%
+
+\end{document}
