@@ -1,0 +1,267 @@
+\documentclass{article}
+
+%% Created with wxMaxima 13.04.2
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i1) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+K: 1/sqrt(1-(k^2)*(sin(u))^2);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o1) }
+\frac{1}{\sqrt{1−{k}^{2}\,{\mathrm{sin}\left( u\right) }^{2}}}
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i2) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+integrate(K, u, o, %pi/2);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o2) }
+\int_{o}^{\frac{\pi }{2}}\frac{1}{\sqrt{1−{k}^{2}\,{\mathrm{sin}\left( u\right) }^{2}}}du
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i3) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+tK: taylor(K, u, 0, 8);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o3)/T/ }
+1+\frac{{k}^{2}\,{u}^{2}}{2}+\frac{\left( 9\,{k}^{4}−4\,{k}^{2}\right) \,{u}^{4}}{24}+\frac{\left( 225\,{k}^{6}−180\,{k}^{4}+16\,{k}^{2}\right) \,{u}^{6}}{720}+\frac{\left( 11025\,{k}^{8}−12600\,{k}^{6}+3024\,{k}^{4}−64\,{k}^{2}\right) \,{u}^{8}}{40320}+...
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i4) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+eK: expand(integrate(tK, u, 0, %pi/2));
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o4) }
+\frac{35\,{\pi }^{9}\,{k}^{8}}{589824}−\frac{5\,{\pi }^{9}\,{k}^{6}}{73728}+\frac{5\,{\pi }^{7}\,{k}^{6}}{14336}+\frac{{\pi }^{9}\,{k}^{4}}{61440}−\frac{{\pi }^{7}\,{k}^{4}}{3584}+\frac{3\,{\pi }^{5}\,{k}^{4}}{1280}−\frac{{\pi }^{9}\,{k}^{2}}{2903040}+\frac{{\pi }^{7}\,{k}^{2}}{40320}−\frac{{\pi }^{5}\,{k}^{2}}{960}+\frac{{\pi }^{3}\,{k}^{2}}{48}+\frac{\pi }{2}
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i5) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+sK: subst(sin(%theta/2), k, eK);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o5) }
+\frac{35\,{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{8}}{589824}−\frac{5\,{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{73728}+\frac{5\,{\pi }^{7}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{14336}+\frac{{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{61440}−\frac{{\pi }^{7}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{3584}+\frac{3\,{\pi }^{5}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{1280}−\frac{{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{2903040}+\frac{{\pi }^{7}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{40320}−\frac{{\pi }^{5}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{960}+\frac{{\pi }^{3}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{48}+\frac{\pi }{2}
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i7) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+ssK: sK*2/%pi;
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o7) }
+\frac{2\,\left( \frac{35\,{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{8}}{589824}−\frac{5\,{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{73728}+\frac{5\,{\pi }^{7}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{14336}+\frac{{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{61440}−\frac{{\pi }^{7}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{3584}+\frac{3\,{\pi }^{5}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{1280}−\frac{{\pi }^{9}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{2903040}+\frac{{\pi }^{7}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{40320}−\frac{{\pi }^{5}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{960}+\frac{{\pi }^{3}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{48}+\frac{\pi }{2}\right) }{\pi }
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i8) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+essK: expand(ssK);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o8) }
+\frac{35\,{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{8}}{294912}−\frac{5\,{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{36864}+\frac{5\,{\pi }^{6}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{7168}+\frac{{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{30720}−\frac{{\pi }^{6}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{1792}+\frac{3\,{\pi }^{4}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{640}−\frac{{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{1451520}+\frac{{\pi }^{6}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{20160}−\frac{{\pi }^{4}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{480}+\frac{{\pi }^{2}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{24}+1
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i11) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+T: (2*%pi)*sqrt(l/g);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o11) }
+2\,\pi \,\sqrt{\frac{l}{g}}
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i12) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+define(T(theta), T*essK);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o12) }
+\mathrm{T}\left( \theta\right) :=2\,\pi \,\left( \frac{35\,{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{8}}{294912}−\frac{5\,{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{36864}+\frac{5\,{\pi }^{6}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{6}}{7168}+\frac{{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{30720}−\frac{{\pi }^{6}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{1792}+\frac{3\,{\pi }^{4}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{4}}{640}−\frac{{\pi }^{8}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{1451520}+\frac{{\pi }^{6}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{20160}−\frac{{\pi }^{4}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{480}+\frac{{\pi }^{2}\,{\mathrm{sin}\left( \frac{\theta}{2}\right) }^{2}}{24}+1\right) \,\sqrt{\frac{l}{g}}
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i13) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+S: sin(%theta/2);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o13) }
+\mathrm{sin}\left( \frac{\theta}{2}\right) 
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i14) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+sS: taylor(S, %theta, 0, 8);
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o14)/T/ }
+\frac{\theta}{2}−\frac{{\theta}^{3}}{48}+\frac{{\theta}^{5}}{3840}−\frac{{\theta}^{7}}{645120}+...
+\end{math}
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{8ex}{\color{red}\bf
+\begin{verbatim}
+(%i20) 
+\end{verbatim}}
+\end{minipage}
+\begin{minipage}[t]{\textwidth}{\color{blue}
+\begin{verbatim}
+mlT: subst(sS, S, T(theta));
+\end{verbatim}}
+\end{minipage}
+%%% OUTPUT:
+\begin{math}\displaystyle
+\parbox{8ex}{\color{labelcolor}(\%o20)/T/ }
+2\,\pi \,\sqrt{\frac{l}{g}}−\frac{\left( {\pi }^{9}−72\,{\pi }^{7}+3024\,{\pi }^{5}−60480\,{\pi }^{3}\right) \,\sqrt{\frac{l}{g}}\,{\theta}^{2}}{2903040}+\frac{\left( 571\,{\pi }^{9}−10008\,{\pi }^{7}+93744\,{\pi }^{5}−241920\,{\pi }^{3}\right) \,\sqrt{\frac{l}{g}}\,{\theta}^{4}}{139345920}−\frac{\left( 82231\,{\pi }^{9}−560052\,{\pi }^{7}+1681344\,{\pi }^{5}−967680\,{\pi }^{3}\right) \,\sqrt{\frac{l}{g}}\,{\theta}^{6}}{16721510400}+\frac{\left( 7632451\,{\pi }^{9}−23682528\,{\pi }^{7}+27627264\,{\pi }^{5}−3870720\,{\pi }^{3}\right) \,\sqrt{\frac{l}{g}}\,{\theta}^{8}}{3745618329600}+...
+\end{math}
+%%%%%%%%%%%%%%%
+
+\end{document}
